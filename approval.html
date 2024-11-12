@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .container {
             max-width: 1000px;
             margin: 30px auto;
@@ -20,18 +21,18 @@
             border-radius: 8px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
         }
-
+        
         h2 {
             text-align: center;
             color: #4CAF50;
             margin-bottom: 25px;
             font-size: 2.2em;
         }
-
+        
         .form-section {
             margin-bottom: 50px;
         }
-
+        
         .form-section h3 {
             color: #333;
             margin-bottom: 10px;
@@ -39,19 +40,20 @@
             padding-bottom: 5px;
             font-size: 1.6em;
         }
-
+        
         form {
             display: flex;
             flex-direction: column;
         }
-
+        
         label {
             margin-bottom: 8px;
             font-weight: bold;
             color: #555;
         }
-
-        input, select {
+        
+        input,
+        select {
             padding: 18px;
             margin-bottom: 18px;
             border: 1px solid #ddd;
@@ -59,7 +61,7 @@
             font-size: 16px;
             width: 100%;
         }
-
+        
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
@@ -70,11 +72,11 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-
+        
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-
+        
         .results {
             background-color: #e9f5e9;
             border: 1px solid #4CAF50;
@@ -82,38 +84,36 @@
             border-radius: 6px;
             margin-top: 20px;
         }
-
+        
         .results p {
             margin: 0;
             padding: 5px 0;
             color: #333;
         }
-
+        
         @media (max-width: 1000px) {
             .container {
                 width: 90%;
                 margin: 20px auto;
                 padding: 25px;
             }
-
             h2 {
                 font-size: 1.8em;
             }
-
             .form-section h3 {
                 font-size: 1.4em;
             }
-
             input {
                 font-size: 14px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Approval and Compliance</h2>
-        
+
         <!-- Validate Expenses Section -->
         <div class="form-section">
             <h3>Validate Expenses</h3>
@@ -130,7 +130,7 @@
                 <input type="submit" value="Submit Validation">
             </form>
         </div>
-        
+
         <!-- Compliance Check Section -->
         <div class="form-section">
             <h3>Compliance Check</h3>
@@ -158,4 +158,5 @@
         </div>
     </div>
 </body>
+
 </html>
