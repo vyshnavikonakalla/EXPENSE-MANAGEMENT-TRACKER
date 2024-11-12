@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px; /* Increased the max-width for a larger container */
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px; /* Increased padding for more spacing */
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* Made shadow slightly darker for more depth */
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 25px;
+            font-size: 2em; /* Adjusted font size for better visibility */
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.5em; /* Adjusted font size for better section distinction */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea, select {
+            padding: 15px; /* Increased padding for larger input fields */
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px; /* Increased border-radius for softer edges */
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 14px; /* Increased padding for larger button */
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"].delete-btn {
+            background-color: #d9534f;
+        }
+
+        input[type="submit"].delete-btn:hover {
+            background-color: #c9302c;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .form-section h3 {
+                font-size: 1.4em;
+            }
+
+            input, textarea {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Expense Management</h2>
+        
+        <!-- Add Expense Section -->
+        <div class="form-section">
+            <h3>Add Expense</h3>
+            <form action="/add-expense" method="POST">
+                <label for="add-date">Date:</label>
+                <input type="date" id="add-date" name="date" required>
+
+                <label for="add-category">Category:</label>
+                <input type="text" id="add-category" name="category" placeholder="e.g., Groceries, Rent" required>
+
+                <label for="add-amount">Amount:</label>
+                <input type="number" id="add-amount" name="amount" placeholder="Enter amount" required>
+
+                <label for="add-description">Description:</label>
+                <textarea id="add-description" name="description" rows="4" placeholder="Describe your expense" required></textarea>
+
+                <input type="submit" value="Add Expense">
+            </form>
+        </div>
+        
+        <!-- Edit Expense Section -->
+        <div class="form-section">
+            <h3>Edit Expense</h3>
+            <form action="/edit-expense" method="POST">
+                <label for="edit-id">Expense ID:</label>
+                <input type="text" id="edit-id" name="id" placeholder="Enter the expense ID to edit" required>
+
+                <label for="edit-date">New Date:</label>
+                <input type="date" id="edit-date" name="date">
+
+                <label for="edit-category">New Category:</label>
+                <input type="text" id="edit-category" name="category" placeholder="e.g., Groceries, Rent">
+
+                <label for="edit-amount">New Amount:</label>
+                <input type="number" id="edit-amount" name="amount" placeholder="Enter new amount">
+
+                <label for="edit-description">New Description:</label>
+                <textarea id="edit-description" name="description" rows="4" placeholder="Update your description"></textarea>
+
+                <input type="submit" value="Edit Expense">
+            </form>
+        </div>
+        
+        <!-- Delete Expense Section -->
+        <div class="form-section">
+            <h3>Delete Expense</h3>
+            <form action="/delete-expense" method="POST">
+                <label for="delete-id">Expense ID:</label>
+                <input type="text" id="delete-id" name="id" placeholder="Enter the expense ID to delete" required>
+
+                <input type="submit" class="delete-btn" value="Delete Expense">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

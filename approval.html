@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval and Compliance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        .form-section {
+            margin-bottom: 50px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.6em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            padding: 18px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            background-color: #e9f5e9;
+            border: 1px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .results p {
+            margin: 0;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .form-section h3 {
+                font-size: 1.4em;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Approval and Compliance</h2>
+        
+        <!-- Validate Expenses Section -->
+        <div class="form-section">
+            <h3>Validate Expenses</h3>
+            <form action="/validate-expenses" method="POST">
+                <label for="expense-id">Expense ID:</label>
+                <input type="text" id="expense-id" name="expense_id" placeholder="Enter the expense ID" required>
+
+                <label for="validation-status">Validation Status:</label>
+                <select id="validation-status" name="validation_status" required>
+                    <option value="approved">Approve</option>
+                    <option value="rejected">Reject</option>
+                </select>
+
+                <input type="submit" value="Submit Validation">
+            </form>
+        </div>
+        
+        <!-- Compliance Check Section -->
+        <div class="form-section">
+            <h3>Compliance Check</h3>
+            <form action="/check-compliance" method="POST">
+                <label for="policy-id">Policy ID:</label>
+                <input type="text" id="policy-id" name="policy_id" placeholder="Enter the policy ID" required>
+
+                <label for="compliance-status">Compliance Status:</label>
+                <select id="compliance-status" name="compliance_status" required>
+                    <option value="compliant">Compliant</option>
+                    <option value="non-compliant">Non-Compliant</option>
+                </select>
+
+                <input type="submit" value="Check Compliance">
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results">
+            <h3>Recent Approvals</h3>
+            <p><strong>Expense ID:</strong> EXP12345</p>
+            <p><strong>Status:</strong> Approved</p>
+            <p><strong>Date:</strong> October 8, 2024</p>
+            <p><strong>Compliance:</strong> Compliant with Policy ID: POL456</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px; /* Larger container size */
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px; /* More padding for a spacious layout */
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        .form-section {
+            margin-bottom: 50px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.6em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            padding: 18px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            background-color: #e9f5e9;
+            border: 1px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .results p {
+            margin: 0;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .form-section h3 {
+                font-size: 1.4em;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Real-Time Updates</h2>
+        
+        <!-- View Expenses Section -->
+        <div class="form-section">
+            <h3>View Expenses</h3>
+            <form action="/view-expenses" method="POST">
+                <label for="view-budget-id">Budget ID:</label>
+                <input type="text" id="view-budget-id" name="budget_id" placeholder="Enter the budget ID" required>
+
+                <label for="view-period">Period:</label>
+                <select id="view-period" name="view_period" required>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <input type="submit" value="View Expenses">
+            </form>
+        </div>
+        
+        <!-- Track Spending Section -->
+        <div class="form-section">
+            <h3>Track Spending</h3>
+            <form action="/track-spending" method="POST">
+                <label for="track-budget-id">Budget ID:</label>
+                <input type="text" id="track-budget-id" name="budget_id" placeholder="Enter the budget ID" required>
+
+                <label for="track-period">Period:</label>
+                <select id="track-period" name="track_period" required>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <input type="submit" value="Track Spending">
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results">
+            <h3>Recent Updates</h3>
+            <p><strong>Date:</strong> October 8, 2024</p>
+            <p><strong>Total Spent Today:</strong> $150.00</p>
+            <p><strong>Remaining Budget:</strong> $850.00</p>
+            <p><strong>Alerts:</strong> None</p>
+        </div>
+    </div>
+</body>
+</html>

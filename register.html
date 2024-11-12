@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Square container with a background and no border */
+.container {
+  width: 400px;
+  height: 400px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Full-width input fields with new background */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  background: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #fff;
+  outline: none;
+  border: 2px solid #04AA6D;
+}
+
+/* Adjust styles of hr */
+hr {
+  border: 1px solid #ddd;
+  margin: 8px 0;
+}
+
+/* Styled submit button */
+.registerbtn {
+  background-image: linear-gradient(to right, #04AA6D, #00cc88);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.registerbtn:hover {
+  background-image: linear-gradient(to right, #00cc88, #04AA6D);
+}
+
+/* Add a green text color to links */
+a {
+  color: #04AA6D;
+}
+
+/* Smaller section for "sign in" */
+.signin {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <div>
+      <h2>Register</h2>
+      <hr>
+
+      <input type="text" placeholder="Full Name" name="fullname" id="fullname" required>
+      <input type="text" placeholder="Username" name="username" id="username" required>
+      <input type="text" placeholder="Email" name="email" id="email" required>
+      <input type="password" placeholder="Password" name="psw" id="psw" required>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    </div>
+
+    <div>
+      <button type="submit" class="registerbtn">Register</button>
+      <div class="signin">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+      </div>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>

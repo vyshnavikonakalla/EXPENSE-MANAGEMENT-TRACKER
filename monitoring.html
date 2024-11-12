@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting and Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        .form-section {
+            margin-bottom: 50px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.6em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            padding: 18px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            background-color: #e9f5e9;
+            border: 1px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .results p {
+            margin: 0;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .form-section h3 {
+                font-size: 1.4em;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Reporting and Monitoring</h2>
+        
+        <!-- Generate Report Section -->
+        <div class="form-section">
+            <h3>Generate Reports</h3>
+            <form action="/generate-report" method="POST">
+                <label for="report-type">Report Type:</label>
+                <select id="report-type" name="report_type" required>
+                    <option value="daily">Daily Report</option>
+                    <option value="weekly">Weekly Report</option>
+                    <option value="monthly">Monthly Report</option>
+                </select>
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start_date" required>
+
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end_date" required>
+
+                <input type="submit" value="Generate Report">
+            </form>
+        </div>
+        
+        <!-- Monitor Spending Section -->
+        <div class="form-section">
+            <h3>Monitor Spending</h3>
+            <form action="/monitor-spending" method="POST">
+                <label for="budget-id">Budget ID:</label>
+                <input type="text" id="budget-id" name="budget_id" placeholder="Enter the budget ID" required>
+
+                <label for="monitor-period">Monitoring Period:</label>
+                <select id="monitor-period" name="monitor_period" required>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <input type="submit" value="Monitor Spending">
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results">
+            <h3>Recent Reports</h3>
+            <p><strong>Report Type:</strong> Monthly Report</p>
+            <p><strong>Period:</strong> September 1, 2024 - September 30, 2024</p>
+            <p><strong>Total Expenses:</strong> $2,500.00</p>
+            <p><strong>Remaining Budget:</strong> $1,500.00</p>
+        </div>
+    </div>
+</body>
+</html>
